@@ -1,0 +1,17 @@
+const int buttonPin = 2;
+const int buzzerPin = 8;
+
+void setup() {
+  pinMode(buttonPin, INPUT_PULLUP);
+  pinMode(buzzerPin, OUTPUT);
+}
+
+void loop() {
+  int buttonState = digitalRead(buttonPin);
+
+  if (buttonState == LOW) {
+    tone(buzzerPin, 1000);   // Sound buzzer while button is pressed
+  } else {
+    noTone(buzzerPin);       // Stop sound when button is released
+  }
+}
